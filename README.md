@@ -1,8 +1,11 @@
- ###  DATE: 
+ INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO
+ ## DATE : 23/02/2024
+## NAME :	CHANDRAMOHAN S																		             
+## ROLLNUMBER : 212221223002
+## DEPARTMENT - INFORMATION TECHNOLOGY
 
-###  NAME: 
-###  ROLL NO :
-###  DEPARTMENT: 
+
+
 
 **AIM**:  To interface a Analog  input (angular displacement sensor POT) and scale the values up on change in the input.
 
@@ -42,13 +45,15 @@ General specifications of analog sensor
 **Potentiometer**
 A potentiometer, informally a pot, is a three-terminal resistor with a sliding or rotating contact that forms an adjustable voltage divider. If only two terminals are used, one end and the wiper, it acts as a variable resistor or rheostat.
 Potentiometers are commonly used to control electrical devices such as volume controls on audio equipment. Potentiometers operated by a mechanism can be used as position transducers, for example, in a joystick. Potentiometers are rarely used to directly control significant power (more than a watt), since the power dissipated in the potentiometer would be comparable to the power in the controlled load
+
 CIRCUIT DIAGRAM
 
+figure 1:
+![Screenshot 2024-02-23 154854](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/118120621/ceaa1726-6623-4a0e-9a31-6d6e568ccea8)
 
 
 
 
-![image](https://user-images.githubusercontent.com/36288975/163530788-eec3cdc3-95e8-4d2d-8349-6d0ea4c9439c.png)
 
 **FIGURE -01
 **
@@ -68,24 +73,57 @@ CIRCUIT DIAGRAM
 
 
 **PROGRAM** 
+// C++ code
+//
+int pot;
+int led=7;
+
+void setup()
+{
+  pinMode(led,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  pot=analogRead(A0);
+  //rial.print("Values=");
+  Serial.println(pot);
+  if (pot>900)
+  {  
+ 
+  digitalWrite(led, HIGH);
+  delay(500);
+  digitalWrite(led, LOW);
+  delay(500); 
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+    delay(500);
+  }
+}
  
 
-
-
-
-
-
-
-
-
-**
 **Simulation output:** 
+
+figure 2:
+
+![Screenshot 2024-02-23 154555](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/118120621/d8317cec-ee24-4b37-9bfd-ab70cdbac448)
+
+
 **
+BEFORE STIMULATION
+
+figure 3:
+
+![Screenshot 2024-02-23 160217](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/118120621/8ef51a2f-ef7a-4508-a41f-12a8e650e194)
 
 
-[My image](username.github.com/repository/img/image.jpg)
+AFTETR STIMULATION
+figure 4:
 
-
+![Screenshot 2024-02-23 160229](https://github.com/vasanthkumarch/EXPERIMENT-NO--02-INTERFACING-ANALOG-INPUT-SENSOR-POT-WITH-ARDUINO-/assets/118120621/133a43e3-4fa6-4af5-b881-a4b5e0328ed1)
 
 
 
